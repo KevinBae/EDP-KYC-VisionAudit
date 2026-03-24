@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         try {
             // Ping the Express backend API
-            const response = await fetch('http://localhost:3000/api/audit', {
+            const response = await fetch('https://edp-kyc-visionaudit.onrender.com', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ url })
