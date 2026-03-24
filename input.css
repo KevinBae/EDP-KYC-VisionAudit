@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+@theme {
+  --color-accent-primary: #8b5cf6;
+  --color-accent-secondary: #0ea5e9;
+  --color-accent-tertiary: #ec4899;
+  
+  --font-heading: "Outfit", sans-serif;
+  --font-body: "Inter", sans-serif;
+}
+
+/* Base styles for the entire page to ensure no weird white backgrounds */
+@layer base {
+  body {
+    background-color: #0f111a; /* bg-slate-950 equivalent */
+    color: #f8fafc; /* text-slate-50 equivalent */
+    font-family: var(--font-body);
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+  }
+}
+
+/* Ambient Background Blobs */
+@layer components {
+  .blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(120px);
+    z-index: -1;
+    opacity: 0.4;
+    animation: drift 20s infinite alternate ease-in-out;
+  }
+
+  .blob-1 {
+    width: 500px;
+    height: 500px;
+    background: var(--color-accent-primary);
+    top: -100px;
+    left: -100px;
+  }
+
+  .blob-2 {
+    width: 600px;
+    height: 600px;
+    background: var(--color-accent-secondary);
+    top: 40%;
+    right: -200px;
+    animation-delay: -5s;
+  }
+
+  .blob-3 {
+    width: 400px;
+    height: 400px;
+    background: var(--color-accent-tertiary);
+    bottom: -100px;
+    left: 20%;
+    animation-delay: -10s;
+  }
+}
+
+/* Glow Utilities */
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(135deg, var(--color-accent-secondary), var(--color-accent-primary), var(--color-accent-tertiary));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% auto;
+    animation: gradientShift 4s linear infinite;
+  }
+
+  .scan-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--color-accent-secondary);
+    box-shadow: 0 0 15px 5px rgba(14, 165, 233, 0.4);
+    animation: scanAnimation 3s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes drift {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(50px, 50px) scale(1.1); }
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes scanAnimation {
+  0% { top: 10%; opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { top: 90%; opacity: 0; }
+}

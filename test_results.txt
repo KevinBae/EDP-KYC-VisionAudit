@@ -1,0 +1,12 @@
+[Test] Auditing https://www.naturemade.com...
+
+--- Technical Trust Analysis Results ---
+Overall Status: warning
+[SUCCESS] SSL/TLS Connection: SSL/TLS Compliance: Encryption verified. However, lack of visible PCI-DSS trust seals reduces consumer confidence at the point of sale, impacting conversion by an estimated 12%.
+[WARNING] Domain Age & Reputation: Domain Age: Could not definitively parse creation date from WHOIS.
+[SUCCESS] Security Headers (HSTS/CSP): HSTS and CSP verified. Excellent robust defense against interception and XSS attacks.
+[SUCCESS] Performance & Stability: Page Load Time is optimal (2.7s). Good stability reduces checkout abandonment.
+[WARNING] Payment Gateway Integration: No recognized 3rd-party hosted checkout scripts found. Merchant may be processing card data on native servers (requires SAQ-D validation).
+[WARNING] Malware & Phishing Risk: Safe Browsing reputation check bypass. Manual underwriter verification recommended.
+
+❌ Error: Only found 6 checks.
