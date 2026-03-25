@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         try {
             // Ping the Express backend API
-            const response = await fetch('https://edp-kyc-visionaudit.onrender.com', {
+            const response = await fetch('https://edp-kyc-visionaudit.onrender.com/api/audit', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ url })
@@ -178,7 +178,7 @@ document.addEventListener('DOMContentLoaded', () => {
             console.error(error);
             reportContent.innerHTML = `
                  <div class="${statusClasses.danger}">
-                    <i class="fa-solid fa-xmark"></i> Connection Error. Ensure the backend server is running on port 3000.
+                    <i class="fa-solid fa-xmark"></i> Connection Error. Ensure the Render backend is live.
                 </div>
             `;
             reportStatus.textContent = "Failed";

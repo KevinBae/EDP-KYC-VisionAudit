@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ShieldCheck, Search, Activity, Lock, AlertTriangle, CheckCircle, ArrowRight } from 'lucide-react';
+import { ShieldCheck, Search, Activity, Lock, ArrowRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Scorecard from './components/Scorecard';
 
@@ -35,7 +35,7 @@ function App() {
     }, 1000);
 
     try {
-      const response = await fetch('https://edp-kyc-visionaudit.onrender.com', {
+      const response = await fetch('https://edp-kyc-visionaudit.onrender.com/api/audit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ url })
@@ -57,7 +57,7 @@ function App() {
       console.error(err);
       clearInterval(stepInterval);
       setIsAuditing(false);
-      alert("Failed to connect to the EPD Audit engine. Check if the server is running on port 3000.");
+      alert("Failed to connect to the EPD Audit engine. Check your internet or if the Render backend is live.");
     }
   };
 
