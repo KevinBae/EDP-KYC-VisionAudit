@@ -503,9 +503,6 @@ app.post('/api/audit', async (req, res) => {
 // Start Server
 app.listen(PORT, () => {
     console.log(`
-=========================================
-⚡ EPD Functional Engine is live!       ⚡
-🔗 Listening on http://localhost:${PORT}
-=========================================
+Successful
     `);
 });
