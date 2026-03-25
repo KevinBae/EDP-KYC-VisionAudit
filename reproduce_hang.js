@@ -6,7 +6,7 @@ async function reproduceHang() {
   
   try {
     const startTime = Date.now();
-    const response = await axios.post('http://localhost:3000/api/audit', {
+    const response = await axios.post('https://edp-kyc-visionaudit.onrender.com', {
       url
     }, {
       timeout: 120000 // 2 minute timeout for the request itself
