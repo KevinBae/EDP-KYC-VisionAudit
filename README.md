@@ -1,6 +1,3 @@
-Listed directory EDP
-Viewed server.js:1-509
-
 The Site Auditor is a specialized "Digital Underwriter" designed to evaluate the risk profile of e-commerce websites. It essentially acts as a pre-check tool that identifies why a bank or payment processor (like Stripe or PayPal) might flag or shut down a merchant's account.
 
 Here is a breakdown of what it does and how it works:
